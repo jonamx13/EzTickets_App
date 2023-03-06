@@ -2,6 +2,7 @@ import React from "react";
 import { TouchableOpacity, Image } from "react-native";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { responsiveFontSize, responsiveHeight, responsiveScreenWidth, responsiveWidth} from "react-native-responsive-dimensions";
 
 import HomeScreen from "../screens/Home";
 import TicketsScreen from "../screens/Tickets";
@@ -29,10 +30,11 @@ export const BottomTab = () => {
     return (
         <Tab.Navigator screenOptions = {screenOptions}>
             <Tab.Screen name = 'Home' component = {HomeScreen} options= {{
-                tabBarButton: () => <CustomButton/>
+                tabBarIcon: () => <CustomButton/>, title: 'Home'
             }}/>
             <Tab.Screen name = 'Tickets' component = {TicketsScreen} options= {{
-                tabBarIcon: () => <Image style={icon} source={i_Tickets}/>
+                tabBarIcon: () => <Image style={icon} source={i_Tickets}/>,
+                    
             }}/>
             <Tab.Screen name = 'Saved' component = {SavedScreen} options= {{
                 tabBarIcon: () => <Image style={icon} source={i_Saved}/>
@@ -47,27 +49,32 @@ export const BottomTab = () => {
 const styles = {
     customButton: {
         backgroundColor: 'red',
-        height: 60,
-        width: 60,
+        height: 50,
+        width: 50,
         borderRadius: 50,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        fontSize: responsiveFontSize(2)
     },
     icon: {
-        height: 32,
-        width: 32
+        height: responsiveHeight(7),
+        width: responsiveWidth(7),
+        resizeMode: 'contain'
     }
 }
 
 const screenOptions = {
     headerShown:false,
     tabBarStyle: {
-        height: 70,
+        height: responsiveHeight(13),
         paddingHorizontal: 30,
         paddingBottom: 10,
         backgroundColor: 'rgba(34,36,40,1)',
         position: 'absolute',
         borderTopWidth: 0,
+        flex: 4,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 }
 export default BottomTab
