@@ -8,6 +8,7 @@ import HomeScreen from "../screens/Home";
 import TicketsScreen from "../screens/Tickets";
 import SavedScreen from "../screens/Saved";
 import MyNFTsScreen from "../screens/MyNFTs";
+import TabBar from "./TabBar";
 
 //icons
 import { i_Home, i_Tickets, i_Saved, i_MyNFTs } from "../assets/index";
@@ -16,32 +17,15 @@ const Tab = createBottomTabNavigator();
 
 export const BottomTab = () => {
 
-    const CustomButton = () => {
-        const { customButton, icon } = styles;
-        return(
-            <TouchableOpacity style={customButton}>
-                <Image style={icon} source={i_Home}/>
-            </TouchableOpacity>
-        )
-    }
-
     const { icon } = styles;
 
     return (
-        <Tab.Navigator screenOptions = {screenOptions}>
-            <Tab.Screen name = 'Home' component = {HomeScreen} options= {{
-                tabBarIcon: () => <CustomButton/>, title: 'Home'
-            }}/>
-            <Tab.Screen name = 'Tickets' component = {TicketsScreen} options= {{
-                tabBarIcon: () => <Image style={icon} source={i_Tickets}/>,
-                    
-            }}/>
-            <Tab.Screen name = 'Saved' component = {SavedScreen} options= {{
-                tabBarIcon: () => <Image style={icon} source={i_Saved}/>
-            }}/>
-            <Tab.Screen name = "My NFT's" component = {MyNFTsScreen} options= {{
-                tabBarIcon: () => <Image style={icon} source={i_MyNFTs}/>
-            }}/>
+        // <Tab.Navigator screenOptions = {screenOptions}>
+        <Tab.Navigator tabBar={(props) => <TabBar {...props}/>}>
+            <Tab.Screen name = 'Home' component = {HomeScreen}/>
+            <Tab.Screen name = 'Tickets' component = {TicketsScreen}/>
+            <Tab.Screen name = 'Saved' component = {SavedScreen}/>
+            <Tab.Screen name = "My NFT's" component = {MyNFTsScreen}/>
         </Tab.Navigator>
     );
 }
