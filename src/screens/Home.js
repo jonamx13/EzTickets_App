@@ -1,13 +1,14 @@
-import { View, Text } from 'react-native'
-import React from 'react'
 import Container from '../gradientStyles/Container'
+import {Text} from 'react-native';
+import EventsCarousel from './HomeComponents/EventsCarousel';
 
 const HomeScreen = () => {
   return (
     <Container>
-      <Text>HomeScreen</Text>
+      <EventsCarousel/>
     </Container>
-  )
+    
+  );
 }
 
-export default HomeScreen;
+export default HomeScreen; 
