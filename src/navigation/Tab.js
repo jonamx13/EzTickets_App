@@ -7,7 +7,6 @@ const Tab = ({color, tab, onPress, icon}) => {
 
     return (
         <TouchableOpacity style={styles.container} onPress={onPress}>
-
             <View style={styles.bgButton}>
                 {icon && <Image source={icon} style={styles.icon}/>}
             </View>
@@ -24,8 +23,8 @@ const styles = StyleSheet.create({
         padding: 5,
     },
     icon: {
-        height:responsiveHeight(7),
-        width: responsiveWidth(7),
+        height:'100%',
+        width: '100%',
         resizeMode: 'contain'
     },
     bgButton: {

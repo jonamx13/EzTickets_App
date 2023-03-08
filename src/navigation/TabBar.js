@@ -1,7 +1,6 @@
-import { getTabBarHeight } from '@react-navigation/bottom-tabs/lib/typescript/src/views/BottomTabBar';
 import React, {useState} from 'react';
-import ReactNative, { View, StyleSheet, Dimensions,Text } from 'react-native';
-import { responsiveHeight, responsiveScreenHeight } from 'react-native-responsive-dimensions';
+import { View, StyleSheet, Dimensions,Text } from 'react-native';
+import { responsiveHeight } from 'react-native-responsive-dimensions';
 import Tab from './Tab';
 
 const {width} = Dimensions.get('screen');
