@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
-import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
-import { i_Home, i_Tickets, i_Saved, i_MyNFTs } from '../assets/index';
+import { responsiveHeight } from 'react-native-responsive-dimensions';
 
 const Tab = ({color, tab, onPress, icon}) => {
 
@@ -20,7 +19,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 5,
+        padding: 0,
     },
     icon: {
         height:'100%',

@@ -9,6 +9,9 @@ const HomeScreen = () => {
       {/* <EventsCarousel/> */}
       <EventData
       eventTitle={'Hackaton Etherfuse Bonito'}
+      eventDate = {'13/March/23'}
+      locationEvent = {'Foro Algo'}
+      cityEvent = {'CDMX'}
       />
     </Container>
     

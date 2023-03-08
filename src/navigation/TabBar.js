@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, StyleSheet, Dimensions,Text } from 'react-native';
+import { View, StyleSheet, Dimensions } from 'react-native';
 import { responsiveHeight } from 'react-native-responsive-dimensions';
 import Tab from './Tab';
 
