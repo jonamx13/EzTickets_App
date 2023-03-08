@@ -1,25 +1,13 @@
+import { getTabBarHeight } from '@react-navigation/bottom-tabs/lib/typescript/src/views/BottomTabBar';
 import React, {useState} from 'react';
-import ReactNative, { View, StyleSheet, Dimensions } from 'react-native';
+import ReactNative, { View, StyleSheet, Dimensions,Text } from 'react-native';
 import { responsiveHeight, responsiveScreenHeight } from 'react-native-responsive-dimensions';
 import Tab from './Tab';
 
 const {width} = Dimensions.get('screen');
 
-const TabBar = ({state,navigation}) => {
-    //Tab bar Height
-    const [height, setHeight] = useState('');
-    const [parent_reference, setParent_Reference] = useState(null);
-    const [child_reference, setChild_Reference] = useState(null);
 
-    const {Height} = height;
-    const getTabHeight = () => {
-        child_reference.measureLayout(
-            ReactNative.findNodeHandle
-            (parent_reference), (Y,Height) => {
-                setHeight(Height);
-            });
-            height = setHeight;
-    }
+export const TabBar = ({state,navigation}) => {
 
     //Tab Selection
     const [selected, setSelected] = useState('Home');
@@ -35,11 +23,11 @@ const TabBar = ({state,navigation}) => {
 
     return (
         <View style={styles.wrapper}>
-            <View style={styles.container} ref={(ref) => { setParent_Reference(ref) }}>
+            <View style={styles.container}>
                 {routes.map((route, index) => (
-                    <Tab ref={(ref) => { setChild_Reference(ref) }}
+                    <Tab
                         tab={route}
-                        // icon={}
+                        icon={route.params.icon}
                         onPress={ () => handlePress(route.name, index)}
                         color={renderColor(route.name)}
                         key={route.key}
@@ -56,7 +44,6 @@ const styles = StyleSheet.create({
        position: 'absolute',
        bottom: 0,
        width,
-       height: responsiveScreenHeight(13),
        alignItems: 'center',
        justifyContent: 'center',
     },

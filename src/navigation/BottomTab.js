@@ -22,10 +22,29 @@ export const BottomTab = () => {
     return (
         // <Tab.Navigator screenOptions = {screenOptions}>
         <Tab.Navigator tabBar={(props) => <TabBar {...props}/>}>
-            <Tab.Screen name = 'Home' component = {HomeScreen}/>
-            <Tab.Screen name = 'Tickets' component = {TicketsScreen}/>
-            <Tab.Screen name = 'Saved' component = {SavedScreen}/>
-            <Tab.Screen name = "My NFT's" component = {MyNFTsScreen}/>
+            <Tab.Screen 
+            name = 'Home'
+            component = {HomeScreen}
+            initialParams={{ icon: i_Home }}
+            />
+
+            <Tab.Screen
+            name = 'Tickets'
+            component = {TicketsScreen}
+            initialParams = {{ icon: i_Tickets }}
+            />
+
+            <Tab.Screen
+            name = 'Saved'
+            component = { SavedScreen }
+            initialParams = {{ icon: i_Saved }}
+            />
+            
+            <Tab.Screen
+            name = "My NFT's"
+            component = {MyNFTsScreen}
+            initialParams = {{ icon: i_MyNFTs }}
+            />
         </Tab.Navigator>
     );
 }

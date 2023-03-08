@@ -7,9 +7,9 @@ const Tab = ({color, tab, onPress, icon}) => {
 
     return (
         <TouchableOpacity style={styles.container} onPress={onPress}>
-            
+
             <View style={styles.bgButton}>
-                <Image source={i_Home} style={styles.icon}></Image>
+                {icon && <Image source={icon} style={styles.icon}/>}
             </View>
             <Text style={{ color }}>{tab.name}</Text>
         </TouchableOpacity>
