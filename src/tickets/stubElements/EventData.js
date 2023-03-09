@@ -1,8 +1,11 @@
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import React from 'react';
-import { responsiveHeight } from 'react-native-responsive-dimensions';
 
-/* A way to get the width of the screen. */
+import EventTitle from './EventDataComponents/EventTitle';
+import EventDate from './EventDataComponents/EventDate';
+import EventLocation from './EventDataComponents/EventLocation';
+import EventCity from './EventDataComponents/EventCity';
+
 const {width} = Dimensions.get('screen');
 
 export function wordSplitter(stringSplitter) {
@@ -13,58 +16,42 @@ export function wordSplitter(stringSplitter) {
 }
 
 
-//TODO: Make dateSplitter function
 export function dateSplitter(stringSplitter) {
   const str = stringSplitter;
   let obj = str.split('/');
-
-
-
 
   return obj;
 }
 
 const EventData = ({ eventTitle, eventDate, locationEvent, cityEvent }) => {
   const titleWord = wordSplitter(eventTitle);
-  const date = wordSplitter(eventDate);
+  const date = dateSplitter(eventDate);
 
+  //TODO: Make vertical and horizontal structure
   return (
     <View style={styles.wrapper}>
-      {/* eventTitle */}
-        <View style={styles.container}> 
-        {
-          titleWord.map((word, index) => (
-            <Text key={word.key}
-            style={ 
-              index == 0 || index % 2 == 0 
-              ? styles.textRegular 
-              : styles.textBold}>
-              {word}
-              </Text>
-          ))
-        }
+
+      <View style={styles.titleContainer}>
+        <EventTitle
+        title={titleWord}
+        />
       </View>
 
-      {/* eventDate */}
-      <View style={styles.container}> 
-        {
-          date.map((word, index) => (
-            <Text key={word.key}
-            style={ 
-              index == 0 || index % 2 == 0 
-              ? styles.textRegular 
-              : styles.textBold}>
-              {word}
-              </Text>
-          ))
-        }
+      <View style={styles.dateContainer}>  
+        <EventDate
+        date={date}
+        />
       </View>
 
-      {/* locationEvent */}
-      <Text>{locationEvent}</Text>
+      <View style={styles.placeContainer}>
+        <EventLocation
+        location={locationEvent}
+        />
 
-      {/* cityEvent */}
-      <Text>{cityEvent}</Text>
+        <EventCity
+        city={cityEvent}
+        />
+      </View>
 
     </View>
     
@@ -79,7 +66,8 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       flexDirection: 'column',
     },
-    container: {
+
+    titleContainer: {
       justifyContent: 'space-between',
       alignItems: 'center',
       flexDirection: 'row',
@@ -92,10 +80,40 @@ const styles = StyleSheet.create({
       height: '10%',
       padding: 10,
     },
+
+    dateContainer: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'row',
+
+      backgroundColor: 'red',
+      borderColor: 'white',
+      borderWidth: 3,
+
+      width: '80%',
+      height: '10%',
+      padding: 10,
+    },
+
+    placeContainer: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'row',
+
+      backgroundColor: 'red',
+      borderColor: 'white',
+      borderWidth: 3,
+
+      width: '80%',
+      height: '10%',
+      padding: 10,
+    },
+
     textRegular: {
       color: 'white',
       fontSize: 25,
     },
+
     textBold: {
       color: 'black',
       fontSize: 25,
