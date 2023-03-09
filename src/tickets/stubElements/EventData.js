@@ -31,7 +31,7 @@ const EventData = ({ eventTitle, eventDate, eventHour, locationEvent, cityEvent,
   const date = dateSplitter(eventDate);
 
   //TODO: Make vertical and horizontal structure
-  //TODO: Calculcate fontsize with 100% - (container + padding - gap(number of word minus 1))
+  //TODO: Calculcate fontsize with 100% - (container - padding - (gap * (number of words minus 1)))
   return (
     <View style={styles.wrapper}>
 
