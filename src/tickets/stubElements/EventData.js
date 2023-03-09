@@ -1,10 +1,13 @@
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import React from 'react';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
 
 import EventTitle from './EventDataComponents/EventTitle';
 import EventDate from './EventDataComponents/EventDate';
+import EventHour from "./EventDataComponents/EventHour";
 import EventLocation from './EventDataComponents/EventLocation';
 import EventCity from './EventDataComponents/EventCity';
+
+import { ScaledSheet } from 'react-native-size-matters';
 
 const {width} = Dimensions.get('screen');
 
@@ -23,11 +26,12 @@ export function dateSplitter(stringSplitter) {
   return obj;
 }
 
-const EventData = ({ eventTitle, eventDate, locationEvent, cityEvent }) => {
+const EventData = ({ eventTitle, eventDate, eventHour, locationEvent, cityEvent, stubFormat = false }) => {
   const titleWord = wordSplitter(eventTitle);
   const date = dateSplitter(eventDate);
 
   //TODO: Make vertical and horizontal structure
+  //TODO: Calculcate fontsize with 100% - (container + padding - gap(number of word minus 1))
   return (
     <View style={styles.wrapper}>
 
@@ -40,6 +44,10 @@ const EventData = ({ eventTitle, eventDate, locationEvent, cityEvent }) => {
       <View style={styles.dateContainer}>  
         <EventDate
         date={date}
+        />
+        <EventHour
+
+        hour={eventHour}
         />
       </View>
 
@@ -58,7 +66,7 @@ const EventData = ({ eventTitle, eventDate, locationEvent, cityEvent }) => {
   )
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     wrapper: {
       flex:1,
       width,
@@ -74,11 +82,10 @@ const styles = StyleSheet.create({
 
       backgroundColor: 'red',
       borderColor: 'white',
-      borderWidth: 3,
+      borderWidth: '3@s',
 
       width: '80%',
-      height: '10%',
-      padding: 10,
+      padding: '2%',
     },
 
     dateContainer: {
@@ -86,7 +93,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       flexDirection: 'row',
 
-      backgroundColor: 'red',
+      backgroundColor: 'green',
       borderColor: 'white',
       borderWidth: 3,
 
@@ -100,7 +107,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       flexDirection: 'row',
 
-      backgroundColor: 'red',
+      backgroundColor: 'blue',
       borderColor: 'white',
       borderWidth: 3,
 
@@ -121,4 +128,4 @@ const styles = StyleSheet.create({
     }
   }
 );
-export default EventData
+export default EventData;

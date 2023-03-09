@@ -1,23 +1,24 @@
-import { View, Text, StyleSheet, Dimensions } from 'react-native'
 import React from 'react';
+import { Text, StyleSheet } from 'react-native';
 
-const {width} = Dimensions.get('screen');
+import { ScaledSheet } from 'react-native-size-matters';
 
 const EventLocation = ({location}) => {
   return (
         <Text
+          adjustsFontSizeToFit
           style={styles.textBold}>
           {location}
         </Text>
   )
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     textBold: {
       color: 'black',
-      fontSize: 25,
+      fontSize: '50@s',
       fontWeight: 'bold'
     }
   }
 );
-export default EventLocation
+export default EventLocation;

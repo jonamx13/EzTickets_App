@@ -1,24 +1,23 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 
-import { ScaledSheet } from 'react-native-size-matters';
+import { scale } from 'react-native-size-matters';
 
-const EventCity = ({city}) => {
+const EventHour = ({hour}) => {
   return (
         <Text
-          adjustsFontSizeToFit
           style={styles.textBold}>
-          {city}
+          {hour}
         </Text>
   )
 }
 
-const styles = ScaledSheet.create({
+const styles = StyleSheet.create({
     textBold: {
       color: 'black',
-      fontSize: '50@s',
+      fontSize: scale(20),
       fontWeight: 'bold'
     }
   }
 );
-export default EventCity;
+export default EventHour;

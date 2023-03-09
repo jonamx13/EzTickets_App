@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet, Dimensions } from 'react-native'
 import React from 'react';
+import { Text, StyleSheet } from 'react-native';
 
-const {width} = Dimensions.get('screen');
+import { scale } from 'react-native-size-matters';
 
 const EventDate = ({date}) => {
   return ( 
@@ -21,36 +21,16 @@ const EventDate = ({date}) => {
 }
 
 const styles = StyleSheet.create({
-    wrapper: {
-      flex:1,
-      width,
-      justifyContent: 'center',
-      alignItems: 'center',
-      flexDirection: 'column',
-    },
-    container: {
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      flexDirection: 'row',
-
-      backgroundColor: 'red',
-      borderColor: 'white',
-      borderWidth: 3,
-
-      width: '80%',
-      height: '10%',
-      padding: 10,
-    },
     textRegular: {
       color: 'white',
-      fontSize: 25,
+      fontSize: scale(20),
     },
     textBold: {
       color: 'black',
-      fontSize: 25,
+      fontSize: scale(20),
       fontWeight: 'bold'
     }
   }
 );
 
-export default EventDate
+export default EventDate;
