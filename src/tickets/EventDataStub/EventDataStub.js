@@ -31,9 +31,6 @@ const EventDataStub = ({ eventTitle, eventDate, eventHour, locationEvent, cityEv
   const titleWord = wordSplitter(eventTitle);
   const date = dateSplitter(eventDate);
 
-  //TODO: Kind of ticket Bronze/Silver/Gold/Platinum
-  //TODO: EventDataTicket arrange components
-  //TODO: Stub & Ticket components
   return (
     <View style={styles.wrapper}>
 

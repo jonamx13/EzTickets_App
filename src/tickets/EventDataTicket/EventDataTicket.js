@@ -3,7 +3,6 @@ import { View, Dimensions } from 'react-native';
 
 import EventTitle from './DataTicketElements/TicketTitle';
 import EventDate from './DataTicketElements/TicketDate';
-import EventHour from "./DataTicketElements/TicketHour";
 import EventLocation from './DataTicketElements/TicketLocation';
 import EventCity from './DataTicketElements/TicketCity';
 
@@ -32,41 +31,37 @@ const EventDataStub = ({ eventTitle, eventDate, eventHour, locationEvent, cityEv
 
   //TODO: Kind of ticket Bronze/Silver/Gold/Platinum
   //TODO: EventDataTicket arrange components
-  //TODO: Stub & Ticket components
   return (
     <View style={styles.wrapper}>
 
+      {/* First Line */}
       <View style={styles.titleContainer}>
         <EventTitle
         title={titleWord}
         />
       </View>
 
-      <View style={styles.titleContainer}>  
-        <EventDate
-        date={date}
-        />
-        
-        <EventHour
-        hour={eventHour}
-        />
+      {/* Second Line*/}
+      <View style={styles.rowWrapper}>
+
+        <View style={styles.locationContainer}>  
+          <EventDate
+          date={date}
+          />
+        </View>
+
+        <View style={styles.locationContainer}>
+          <EventLocation
+          location={locationEvent}
+          />
+
+          <EventCity
+          city={cityEvent}
+          />
+        </View>
+
       </View>
-
-      <View style={styles.titleContainer}>
-        <EventLocation
-        location={locationEvent}
-        />
-
-        <EventCity
-        city={cityEvent}
-        />
-      </View>
-
-    <View style={styles.entranceTypeContainer}>
-      <EntranceType
-      type={typeTicket}
-      />
-    </View>
+      
 
     </View>
     
@@ -94,16 +89,25 @@ const styles = ScaledSheet.create({
       padding: '1%',
     },
 
-    entranceTypeContainer: {
-      justifyContent: 'center',
+    rowWrapper: {
+      width,
+      justifyContent: 'space-between',
       flexDirection: 'row',
+      gap: '8@s'
+    },
+
+    locationContainer: {
+      alignItems: 'center',
+      
+      flexGrow:2,
 
       borderColor: 'white',
       borderWidth: '3@s',
 
-      width: '100%',
-      padding: '2%',
+      padding: '1%',
+      height: '100%',
     },
+
   }
 );
 export default EventDataStub;
