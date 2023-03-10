@@ -11,7 +11,7 @@ const EventTitle = ({title, fontSize}) => {
   return (
         <View style={styles.wrapper}>{
             title.map((word, index) => (
-              <Text key={word.key}
+              <Text key={index}
               numberOfLines={1}
               style={[
                   styles.textGeneralStyle,

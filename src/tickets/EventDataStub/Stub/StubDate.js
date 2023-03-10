@@ -9,7 +9,7 @@ const EventDate = ({date}) => {
   return (
           <View style={styles.wrapper}> 
             {date.map((word, index) => (
-              <Text style={[
+              <Text key={index} style={[
                 styles.textGeneralStyle,
 
                 index == 0 || index % 2 == 0 

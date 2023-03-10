@@ -7,7 +7,7 @@ const fontSize = `${15}@s`;
 
 const EventCity = ({city}) => {
   return (
-    <Text 
+    <Text
     style={styles.textBold}>
     {city}
     </Text>
