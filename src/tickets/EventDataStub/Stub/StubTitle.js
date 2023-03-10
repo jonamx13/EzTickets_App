@@ -42,11 +42,12 @@ const styles = ScaledSheet.create({
 
     textGeneralStyle: {
       color: 'white',
-      fontSize
+      fontSize,
+      fontFamily: '400', // Regular
     },
 
     textBold: {
-      fontWeight: 'bold'
+      fontWeight: '700' // Bold
     },
 
   }

@@ -18,7 +18,7 @@ const styles = ScaledSheet.create({
     textBold: {
       paddingHorizontal: '5@s',
       color: 'white',
-      fontWeight: 'bold',
+      fontWeight: '300', // Light
       fontSize,
     }
   }

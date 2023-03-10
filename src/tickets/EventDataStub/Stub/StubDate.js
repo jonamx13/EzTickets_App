@@ -12,9 +12,6 @@ const EventDate = ({date}) => {
               <Text key={index} style={[
                 styles.textGeneralStyle,
 
-                index == 0 || index % 2 == 0 
-                ? styles.textRegular 
-                : styles.textBold
               ]}>
   
                 {/*Date slash separator*/}
@@ -29,19 +26,15 @@ const EventDate = ({date}) => {
 }
 
 const styles = ScaledSheet.create({
-  wrapper: {
-    paddingHorizontal: '5@s',
-    flexDirection: 'row',
-  },
-  textGeneralStyle: {
-    color: 'white',
-    fontSize
-    // fontSize,
-  },
-
-  textBold: {
-    fontWeight: 'bold'
-  },
+    wrapper: {
+      paddingHorizontal: '5@s',
+      flexDirection: 'row',
+    },
+    textGeneralStyle: {
+      color: 'white',
+      fontSize,
+      fontWeight: '700', // Light
+    },
   }
 );
 

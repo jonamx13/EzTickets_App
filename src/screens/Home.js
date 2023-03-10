@@ -1,5 +1,4 @@
 import Container from '../gradientStyles/Container'
-import {Text} from 'react-native';
 import EventsCarousel from './HomeComponents/EventsCarousel';
 import EventDataStub from '../tickets/EventDataStub/EventDataStub';
 
@@ -13,7 +12,7 @@ const HomeScreen = () => {
       eventHour = {'20:00HRS'}
       locationEvent = {'Foro Algo,'}
       cityEvent = {'CDMX'}
-      stubFormat = {true}
+      typeTicket = {'PLATINUM PASS'}
       />
     </Container>
     

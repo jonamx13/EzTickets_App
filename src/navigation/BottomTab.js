@@ -11,7 +11,7 @@ import MyNFTsScreen from "../screens/MyNFTs";
 import TabBar from "./TabBar";
 
 //icons
-import { i_Home, i_Tickets, i_Saved, i_MyNFTs } from "../assets/index";
+import { i_Home, i_Tickets, i_Saved, i_MyNFTs } from "../../assets/index";
 
 const Tab = createBottomTabNavigator();
 

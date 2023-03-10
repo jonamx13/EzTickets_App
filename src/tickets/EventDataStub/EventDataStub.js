@@ -6,6 +6,7 @@ import EventDate from './Stub/StubDate';
 import EventHour from "./Stub/StubHour";
 import EventLocation from './Stub/StubLocation';
 import EventCity from './Stub/StubCity';
+import EntranceType from "./Stub/StubEntranceType";
 
 import { ScaledSheet } from 'react-native-size-matters';
 
@@ -26,7 +27,7 @@ export function dateSplitter(stringSplitter) {
   return obj;
 }
 
-const EventDataStub = ({ eventTitle, eventDate, eventHour, locationEvent, cityEvent}) => {
+const EventDataStub = ({ eventTitle, eventDate, eventHour, locationEvent, cityEvent, typeTicket }) => {
   const titleWord = wordSplitter(eventTitle);
   const date = dateSplitter(eventDate);
 
@@ -62,6 +63,12 @@ const EventDataStub = ({ eventTitle, eventDate, eventHour, locationEvent, cityEv
         />
       </View>
 
+    <View style={styles.entranceTypeContainer}>
+      <EntranceType
+      type={typeTicket}
+      />
+    </View>
+
     </View>
     
   )
@@ -86,6 +93,17 @@ const styles = ScaledSheet.create({
 
       width: '100%',
       padding: '1%',
+    },
+
+    entranceTypeContainer: {
+      justifyContent: 'center',
+      flexDirection: 'row',
+
+      borderColor: 'white',
+      borderWidth: '3@s',
+
+      width: '100%',
+      padding: '2%',
     },
   }
 );
