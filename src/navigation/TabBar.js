@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import { responsiveHeight } from 'react-native-responsive-dimensions';
+import { ScaledSheet } from 'react-native-size-matters';
+
 import Tab from './Tab';
 
 const {width} = Dimensions.get('screen');
@@ -11,7 +13,7 @@ export const TabBar = ({state,navigation}) => {
     //Tab Selection
     const [selected, setSelected] = useState('Home');
     const { routes } = state;
-    const renderColor = (currentTab) => (currentTab === selected ? 'red': 'white');
+    const renderColor = (currentTab) => (currentTab === selected ? '#00ffa2': 'white');
 
     const handlePress = (activeTab, index) => {
         if(state.index !== index) {
@@ -38,7 +40,7 @@ export const TabBar = ({state,navigation}) => {
     
 };
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     wrapper: {
        position: 'absolute',
        bottom: 0,
@@ -49,9 +51,10 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        backgroundColor: '#000',
+        backgroundColor: '#1b1464',
         width,
-        height:responsiveHeight(14),
+        paddingBottom: '5@s',
+        paddingTop: '7@s'
     },
 });
 

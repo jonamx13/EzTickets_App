@@ -72,7 +72,7 @@ const screenOptions = {
         height: responsiveHeight(13),
         paddingHorizontal: 30,
         paddingBottom: 10,
-        backgroundColor: 'rgba(34,36,40,1)',
+        backgroundColor: '#1b1464',
         position: 'absolute',
         borderTopWidth: 0,
         flex: 4,

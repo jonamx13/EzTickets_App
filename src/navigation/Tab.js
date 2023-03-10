@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 0,
     },
     icon: {
         height:'100%',
@@ -27,7 +26,9 @@ const styles = StyleSheet.create({
         resizeMode: 'contain'
     },
     bgButton: {
-        backgroundColor: 'red',
+        borderColor: 'white',
+        borderWidth: 2,
+        backgroundColor: '#b400e9',
         height: responsiveHeight(7),
         width: responsiveHeight(7),
         borderRadius: 200,
