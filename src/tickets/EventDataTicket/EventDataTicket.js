@@ -1,12 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Dimensions } from 'react-native';
 
-import EventTitle from './DataStubElements/StubTitle';
-import EventDate from './DataStubElements/StubDate';
-import EventHour from "./DataStubElements/StubHour";
-import EventLocation from './DataStubElements/StubLocation';
-import EventCity from './DataStubElements/StubCity';
-import EntranceType from "./DataStubElements/StubEntranceType";
+import EventTitle from './DataTicketElements/TicketTitle';
+import EventDate from './DataTicketElements/TicketDate';
+import EventHour from "./DataTicketElements/TicketHour";
+import EventLocation from './DataTicketElements/TicketLocation';
+import EventCity from './DataTicketElements/TicketCity';
 
 import { ScaledSheet } from 'react-native-size-matters';
 
