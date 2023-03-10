@@ -1,23 +1,25 @@
 import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text } from 'react-native';
 
 import { ScaledSheet } from 'react-native-size-matters';
 
+const fontSize = `${15}@s`;
+
 const EventLocation = ({location}) => {
   return (
-        <Text
-          adjustsFontSizeToFit
+          <Text 
           style={styles.textBold}>
           {location}
-        </Text>
-  )
+          </Text>
+      )
 }
 
 const styles = ScaledSheet.create({
     textBold: {
-      color: 'black',
-      fontSize: '50@s',
-      fontWeight: 'bold'
+      paddingHorizontal: '5@s',
+      color: 'white',
+      fontWeight: 'bold',
+      fontSize,
     }
   }
 );

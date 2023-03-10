@@ -4,18 +4,23 @@ import { Text, View, Dimensions } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 
 const {width} = Dimensions.get('screen');
+const fontSize = `${37}@s`;
 
-const EventTitle = ({title}) => {
+export const somefunction = 10;
+const EventTitle = ({title, fontSize}) => {
   return (
-    
         <View style={styles.wrapper}>{
             title.map((word, index) => (
               <Text key={word.key}
               numberOfLines={1}
-              style={ 
-                index == 0 || index % 2 == 0 
-                ? styles.textRegular 
-                : styles.textBold}>
+              style={[
+                  styles.textGeneralStyle,
+
+                  index == 0 || index % 2 == 0 
+                  ? styles.textRegular 
+                  : styles.textBold
+                  
+                ]}>
                 {word}
                 </Text>
             ))
@@ -27,24 +32,23 @@ const EventTitle = ({title}) => {
 const styles = ScaledSheet.create({
   wrapper: {
     flexWrap: 'wrap',
-    backgroundColor: 'yellow',
     flex:1,
     width,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    
+    gap: '5@s',
   },
 
-    textRegular: {
+    textGeneralStyle: {
       color: 'white',
-      fontSize: '25@s',
+      fontSize
     },
+
     textBold: {
-      color: 'black',
-      fontSize: '30@s',
       fontWeight: 'bold'
-    }
+    },
+
   }
 );
 
