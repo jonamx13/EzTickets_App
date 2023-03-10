@@ -26,7 +26,7 @@ export function dateSplitter(stringSplitter) {
   return obj;
 }
 
-const EventData = ({ eventTitle, eventDate, eventHour, locationEvent, cityEvent}) => {
+const EventDataStub = ({ eventTitle, eventDate, eventHour, locationEvent, cityEvent}) => {
   const titleWord = wordSplitter(eventTitle);
   const date = dateSplitter(eventDate);
 
@@ -89,4 +89,4 @@ const styles = ScaledSheet.create({
     },
   }
 );
-export default EventData;
+export default EventDataStub;
