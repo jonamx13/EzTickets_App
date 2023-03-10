@@ -39,7 +39,6 @@ const renderItem = ({item}) => {
 };
 
 const EventsCarousel = () => {
-  const[index, setIndex] = useState(0);
   const isCarousel = useRef(null);
   const width = Dimensions.get('window').width;
   return(
