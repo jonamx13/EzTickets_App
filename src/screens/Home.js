@@ -2,11 +2,12 @@ import Container from '../gradientStyles/Container'
 import EventsCarousel from './HomeComponents/EventsCarousel';
 import  EventDataTicket from "../tickets/EventDataTicket/EventDataTicket";
 import EventDataStub from '../tickets/EventDataStub/EventDataStub';
+import Stub from '../tickets/EventDataStub/Stub';
 
 const HomeScreen = () => {
   return (
     <Container>
-      <EventsCarousel/>
+      {/* <EventsCarousel/>
 
       <EventDataTicket
       eventTitle={'Hackaton Etherfuse'}
@@ -14,16 +15,16 @@ const HomeScreen = () => {
       eventHour = {'20:00HRS'}
       locationEvent = {'FORO ALGO'}
       cityEvent = {'CDMX'}
-      />
+      /> */}
 
-      {/* <EventDataStub
+      <Stub
       eventTitle={'Hackaton Etherfuse'}
       eventDate = {'13/March/23'}
       eventHour = {'20:00HRS'}
       locationEvent = {'Foro Algo,'}
       cityEvent = {'CDMX'}
       typeTicket = {'PLATINUM PASS'}
-      /> */}
+      />
 
     </Container>
     

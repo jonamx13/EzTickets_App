@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Dimensions } from 'react-native';
 
 import EventTitle from './DataStubElements/StubTitle';
 import EventDate from './DataStubElements/StubDate';
@@ -9,8 +9,13 @@ import EventCity from './DataStubElements/StubCity';
 import EntranceType from "./DataStubElements/StubEntranceType";
 
 import { ScaledSheet } from 'react-native-size-matters';
+import RadialGradient from 'react-native-radial-gradient';
 
 const {width} = Dimensions.get('screen');
+const colors = {
+  solanaMint: 'rgba(0, 255, 162, 1)',
+  solanaPink: 'rgba(180, 0, 233, 1)',
+}
 
 export function wordSplitter(stringSplitter) {
   const str = stringSplitter;
@@ -60,11 +65,14 @@ const EventDataStub = ({ eventTitle, eventDate, eventHour, locationEvent, cityEv
         />
       </View>
 
-    <View style={styles.entranceTypeContainer}>
+    <RadialGradient 
+    colors={[colors.solanaMint, colors.solanaPink]}
+    radius={width}
+    style={styles.entranceTypeContainer}>
       <EntranceType
       type={typeTicket}
       />
-    </View>
+    </RadialGradient>
 
     </View>
     
@@ -93,14 +101,17 @@ const styles = ScaledSheet.create({
     },
 
     entranceTypeContainer: {
+      backgroundColor: '#00ffa2',
       justifyContent: 'center',
       flexDirection: 'row',
 
       borderColor: 'white',
       borderWidth: '3@s',
+      borderRadius: '15@s',
 
       width: '100%',
       padding: '2%',
+      margin: '2%'
     },
   }
 );

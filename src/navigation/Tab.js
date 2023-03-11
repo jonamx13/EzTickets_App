@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
 import { responsiveHeight } from 'react-native-responsive-dimensions';
+import { ScaledSheet } from 'react-native-size-matters';
+
 
 const Tab = ({color, tab, onPress, icon}) => {
 
@@ -14,7 +16,7 @@ const Tab = ({color, tab, onPress, icon}) => {
     )
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     container:{
         flex: 1,
         alignItems: 'center',
@@ -27,11 +29,11 @@ const styles = StyleSheet.create({
     },
     bgButton: {
         borderColor: 'white',
-        borderWidth: 2,
+        borderWidth: '1.8@s',
         backgroundColor: '#b400e9',
-        height: responsiveHeight(7),
-        width: responsiveHeight(7),
-        borderRadius: 200,
+        height: '40@s',
+        width: '40@s',
+        borderRadius: 200, // must be a Number
         alignItems: 'center',
     }
 });

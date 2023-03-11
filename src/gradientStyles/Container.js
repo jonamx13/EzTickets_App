@@ -1,6 +1,8 @@
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import { SafeAreaView, StyleSheet } from 'react-native';
+import { ScaledSheet } from 'react-native-size-matters';
+
 
 const Container = ({children}) => {
   return (
@@ -12,13 +14,12 @@ const Container = ({children}) => {
   )
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     gradient: {
         flex: 1,
     },
     container: {
         flex: 1,
-        // marginHorizontal: 0,
     },
 });
 
